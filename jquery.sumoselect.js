@@ -370,6 +370,11 @@
                         }
 
                         if (!O.is_multi) O.hideOpts(); //if its not a multiselect then hide on single select.
+                        
+                        // Update angular ng-models by triggering the change event
+                        if (typeof(angular) !== 'undefined') {
+                          angular.element(O.E).triggerHandler('change');
+                        }
                     });
                 },
 
